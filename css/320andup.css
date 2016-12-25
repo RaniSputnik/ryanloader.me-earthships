@@ -1,0 +1,936 @@
+/* ============================================================
+
+320 and Up by Andy Clarke
+Version: 3.0
+URL: http://stuffandnonsense.co.uk/projects/320andup/
+Apache License: v2.0. http://www.apache.org/licenses/LICENSE-2.0
+
+============================================================ */
+/* Reset =================================================== */
+html,
+body,
+body div,
+span,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+abbr,
+address,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+samp,
+small,
+strong,
+sub,
+sup,
+var,
+b,
+i,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section,
+time,
+mark,
+audio,
+video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+	background: transparent;
+}
+article,
+aside,
+figure,
+footer,
+header,
+hgroup,
+nav,
+section {
+  display: block;
+}
+/* Variables =================================================== */
+/* Mixins =================================================== */
+.clearfix {
+  *zoom: 1;
+}
+.clearfix:before,
+.clearfix:after {
+  display: table;
+  content: "";
+}
+.clearfix:after {
+  clear: both;
+}
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+  position: static;
+  clip: auto;
+  height: auto;
+  width: auto;
+  margin: 0;
+  overflow: visible;
+}
+/* Page =================================================== */
+html {
+	background: #ffffff;
+	font-size: 62.5%;
+	-webkit-overflow-scrolling: touch;
+	-webkit-tap-highlight-color: #f3f5f6;
+	-webkit-text-size-adjust: 100%;
+	-ms-text-size-adjust: 100%;
+}
+body {
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	background-color: transparent;
+	/*font-family: 'Port Lligat Sans', "Helvetica Neue", Helvetica, Arial, sans-serif;*/
+	font-family: 'Quando', "American Typewriter", serif;
+	font-size: 16px;
+	font-size: 1.6rem;
+	line-height: 1.5em;
+	color: #000000;
+}
+/* Typography =================================================== */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  font-family: inherit;
+  font-weight: bold;
+  color: inherit;
+  text-rendering: optimizelegibility;
+}
+h1 small,
+h2 small {
+  font-weight: normal;
+  color: #bfbfbf;
+}
+h1,
+.h1 {
+  margin-bottom: 0.75em;
+  font-size: 32px;
+  font-size: 3.2rem;
+  line-height: 1.2;
+}
+h2,
+.h2 {
+  margin-bottom: 0.75em;
+  font-size: 24px;
+  font-size: 2.4rem;
+  line-height: 1.2;
+}
+h3,
+.h3 {
+  margin-bottom: 1em;
+  font-size: 21px;
+  font-size: 2.1rem;
+  line-height: 1.3;
+}
+h4,
+.h4 {
+  margin-bottom: 1.5em;
+  font-size: 18px;
+  font-size: 1.8rem;
+  line-height: 1.25;
+}
+h5,
+.h5 {
+  font-size: 16px;
+  font-size: 1.6rem;
+  margin-bottom: 1.5em;
+}
+h6,
+.h6 {
+  margin-bottom: 1.5em;
+  font-size: 14px;
+  font-size: 1.4rem;
+  font-weight: normal;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+.header h1,
+.header h2,
+.header h3 {
+  float: left;
+  margin-right: 24px;
+}
+.header h1 a,
+.header h2 a,
+.header h3 a {
+  display: block;
+  position: relative;
+  top: 6px;
+  float: right;
+  padding: 4px 12px;
+  font-size: 14px;
+  font-size: 1.4rem;
+  background-color: #f3f5f6;
+}
+.header h1:hover,
+.header h2:hover,
+.header h3:hover {
+  background-color: #f3f5f6;
+}
+.header .a-rss,
+.header .a-rss:hover {
+  float: left;
+  width: 16px;
+  height: 16px;
+  padding: 0;
+  background: transparent url(../img/a-rss.png) no-repeat 0 0;
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+}
+p,
+ol,
+ul,
+dl,
+address {
+  margin-bottom: 1.5em;
+  font-size: 14px;
+  font-size: 1.4rem;
+  line-height: 1.5em;
+}
+small {
+	font-size: 11px;
+	font-size: 0.7em;
+	line-height: 0.7em;
+}
+ul,
+ol {
+  margin: 0 0 1.5em -24px;
+  padding: 0 0 0 24px;
+}
+li ul,
+li ol {
+  margin: 0;
+  font-size: 16px;
+  font-size: 1.6rem;
+}
+blockquote {
+  margin: 0 0 1.5em -24px;
+  padding-left: 24px;
+  border-left: 2px solid #c7ced6;
+  /*font-family: Cambria, Georgia, Times, "Times New Roman";*/
+  font-family: 'Quando', "American Typewriter", serif;
+  font-style: normal;
+}
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+cite {
+  font-style: normal;
+}
+dl,
+dd {
+  margin-bottom: 1.5em;
+}
+dt {
+  font-weight: bold;
+}
+.dl-horizontal dt {
+  float: left;
+  clear: left;
+  width: 20.25%;
+  text-align: right;
+}
+.dl-horizontal dd {
+  margin-left: 22.78%;
+}
+abbr[title] {
+  border-bottom: 1px dotted #c7ced6;
+  cursor: help;
+}
+b,
+strong {
+  font-weight: bold;
+}
+dfn {
+  font-style: italic;
+}
+ins {
+  background-color: #f3f5f6;
+  color: #000000;
+  text-decoration: none;
+}
+mark {
+  background-color: #f3f5f6;
+  color: #000000;
+  font-style: italic;
+  font-weight: bold;
+}
+pre,
+code,
+kbd,
+samp {
+  /*font-family: Monaco, Courier New, monospace;*/
+  font-family: 'Quando', "American Typewriter", serif;
+  font-size: 14px;
+  font-size: 1.4rem;
+  line-height: 1.5em;
+}
+pre {
+  white-space: pre;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+sub,
+sup {
+  position: relative;
+  font-size: 12px;
+  font-size: 1.2rem;
+  line-height: 0;
+  vertical-align: baselineheight;
+}
+sup {
+  top: -0.5em;
+}
+sub {
+  bottom: -0.25em;
+}
+/* Colour =================================================== */
+a {
+  text-decoration: none;
+  color: #363a1b;
+}
+a:visited {
+  color: #000203;
+}
+a:hover {
+  text-decoration: underline;
+  color: #363a1b;
+}
+a:focus {
+  outline: thin dotted;
+  color: #000000;
+}
+a:hover,
+a:active {
+  outline: 0;
+}
+/* Font Awesome: http://fortawesome.github.com/Font-Awesome/
+
+License
+-------------------------------------------------------
+The Font Awesome webfont, CSS, and LESS files are licensed under CC BY 3.0:
+http://creativecommons.org/licenses/by/3.0/ A mention of
+'Font Awesome - http://fortawesome.github.com/Font-Awesome' in human-readable
+source code is considered acceptable attribution (most common on the web).
+If human readable source code is not available to the end user, a mention in
+an 'About' or 'Credits' screen is considered acceptable (most common in desktop
+or mobile software). */
+@font-face {
+  font-family: 'FontAwesome';
+  src: url('../fonts/fontawesome-webfont.eot');
+  src: url('../fonts/fontawesome-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/fontawesome-webfont.woff') format('woff'), url('../fonts/fontawesome-webfont.ttf') format('truetype'), url('../fonts/fontawesome-webfont.svgz#FontAwesomeRegular') format('svg'), url('../fonts/fontawesome-webfont.svg#FontAwesomeRegular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/*  Font Awesome uses the Unicode Private Use Area (PUA) to ensure screen
+    readers do not read off random characters that represent icons */
+.icon-glass:before {
+  content: "\f000";
+}
+.icon-music:before {
+  content: "\f001";
+}
+.icon-search:before {
+  content: "\f002";
+}
+.icon-envelope:before {
+  content: "\f003";
+}
+.icon-heart:before {
+  content: "\f004";
+}
+.icon-star:before {
+  content: "\f005";
+}
+.icon-star-empty:before {
+  content: "\f006";
+}
+.icon-user:before {
+  content: "\f007";
+}
+.icon-film:before {
+  content: "\f008";
+}
+.icon-th-large:before {
+  content: "\f009";
+}
+.icon-th:before {
+  content: "\f00a";
+}
+.icon-th-list:before {
+  content: "\f00b";
+}
+.icon-ok:before {
+  content: "\f00c";
+}
+.icon-remove:before {
+  content: "\f00d";
+}
+.icon-zoom-in:before {
+  content: "\f00e";
+}
+.icon-zoom-out:before {
+  content: "\f010";
+}
+.icon-off:before {
+  content: "\f011";
+}
+.icon-signal:before {
+  content: "\f012";
+}
+.icon-cog:before {
+  content: "\f013";
+}
+.icon-trash:before {
+  content: "\f014";
+}
+.icon-home:before {
+  content: "\f015";
+}
+.icon-file:before {
+  content: "\f016";
+}
+.icon-time:before {
+  content: "\f017";
+}
+.icon-road:before {
+  content: "\f018";
+}
+.icon-download-alt:before {
+  content: "\f019";
+}
+.icon-download:before {
+  content: "\f01a";
+}
+.icon-upload:before {
+  content: "\f01b";
+}
+.icon-inbox:before {
+  content: "\f01c";
+}
+.icon-play-circle:before {
+  content: "\f01d";
+}
+.icon-repeat:before {
+  content: "\f01e";
+}
+/* \f020 is not a valid unicode character. all shifted one down */
+.icon-refresh:before {
+  content: "\f021";
+}
+.icon-list-alt:before {
+  content: "\f022";
+}
+.icon-lock:before {
+  content: "\f023";
+}
+.icon-flag:before {
+  content: "\f024";
+}
+.icon-headphones:before {
+  content: "\f025";
+}
+.icon-volume-off:before {
+  content: "\f026";
+}
+.icon-volume-down:before {
+  content: "\f027";
+}
+.icon-volume-up:before {
+  content: "\f028";
+}
+.icon-qrcode:before {
+  content: "\f029";
+}
+.icon-barcode:before {
+  content: "\f02a";
+}
+.icon-tag:before {
+  content: "\f02b";
+}
+.icon-tags:before {
+  content: "\f02c";
+}
+.icon-book:before {
+  content: "\f02d";
+}
+.icon-bookmark:before {
+  content: "\f02e";
+}
+.icon-print:before {
+  content: "\f02f";
+}
+.icon-camera:before {
+  content: "\f030";
+}
+.icon-font:before {
+  content: "\f031";
+}
+.icon-bold:before {
+  content: "\f032";
+}
+.icon-italic:before {
+  content: "\f033";
+}
+.icon-text-height:before {
+  content: "\f034";
+}
+.icon-text-width:before {
+  content: "\f035";
+}
+.icon-align-left:before {
+  content: "\f036";
+}
+.icon-align-center:before {
+  content: "\f037";
+}
+.icon-align-right:before {
+  content: "\f038";
+}
+.icon-align-justify:before {
+  content: "\f039";
+}
+.icon-list:before {
+  content: "\f03a";
+}
+.icon-indent-left:before {
+  content: "\f03b";
+}
+.icon-indent-right:before {
+  content: "\f03c";
+}
+.icon-facetime-video:before {
+  content: "\f03d";
+}
+.icon-picture:before {
+  content: "\f03e";
+}
+.icon-pencil:before {
+  content: "\f040";
+}
+.icon-map-marker:before {
+  content: "\f041";
+}
+.icon-adjust:before {
+  content: "\f042";
+}
+.icon-tint:before {
+  content: "\f043";
+}
+.icon-edit:before {
+  content: "\f044";
+}
+.icon-share:before {
+  content: "\f045";
+}
+.icon-check:before {
+  content: "\f046";
+}
+.icon-move:before {
+  content: "\f047";
+}
+.icon-step-backward:before {
+  content: "\f048";
+}
+.icon-fast-backward:before {
+  content: "\f049";
+}
+.icon-backward:before {
+  content: "\f04a";
+}
+.icon-play:before {
+  content: "\f04b";
+}
+.icon-pause:before {
+  content: "\f04c";
+}
+.icon-stop:before {
+  content: "\f04d";
+}
+.icon-forward:before {
+  content: "\f04e";
+}
+.icon-fast-forward:before {
+  content: "\f050";
+}
+.icon-step-forward:before {
+  content: "\f051";
+}
+.icon-eject:before {
+  content: "\f052";
+}
+.icon-chevron-left:before {
+  content: "\f053";
+}
+.icon-chevron-right:before {
+  content: "\f054";
+}
+.icon-plus-sign:before {
+  content: "\f055";
+}
+.icon-minus-sign:before {
+  content: "\f056";
+}
+.icon-remove-sign:before {
+  content: "\f057";
+}
+.icon-ok-sign:before {
+  content: "\f058";
+}
+.icon-question-sign:before {
+  content: "\f059";
+}
+.icon-info-sign:before {
+  content: "\f05a";
+}
+.icon-screenshot:before {
+  content: "\f05b";
+}
+.icon-remove-circle:before {
+  content: "\f05c";
+}
+.icon-ok-circle:before {
+  content: "\f05d";
+}
+.icon-ban-circle:before {
+  content: "\f05e";
+}
+.icon-arrow-left:before {
+  content: "\f060";
+}
+.icon-arrow-right:before {
+  content: "\f061";
+}
+.icon-arrow-up:before {
+  content: "\f062";
+}
+.icon-arrow-down:before {
+  content: "\f063";
+}
+.icon-share-alt:before {
+  content: "\f064";
+}
+.icon-resize-full:before {
+  content: "\f065";
+}
+.icon-resize-small:before {
+  content: "\f066";
+}
+.icon-plus:before {
+  content: "\f067";
+}
+.icon-minus:before {
+  content: "\f068";
+}
+.icon-asterisk:before {
+  content: "\f069";
+}
+.icon-exclamation-sign:before {
+  content: "\f06a";
+}
+.icon-gift:before {
+  content: "\f06b";
+}
+.icon-leaf:before {
+  content: "\f06c";
+}
+.icon-fire:before {
+  content: "\f06d";
+}
+.icon-eye-open:before {
+  content: "\f06e";
+}
+.icon-eye-close:before {
+  content: "\f070";
+}
+.icon-warning-sign:before {
+  content: "\f071";
+}
+.icon-plane:before {
+  content: "\f072";
+}
+.icon-calendar:before {
+  content: "\f073";
+}
+.icon-random:before {
+  content: "\f074";
+}
+.icon-comment:before {
+  content: "\f075";
+}
+.icon-magnet:before {
+  content: "\f076";
+}
+.icon-chevron-up:before {
+  content: "\f077";
+}
+.icon-chevron-down:before {
+  content: "\f078";
+}
+.icon-retweet:before {
+  content: "\f079";
+}
+.icon-shopping-cart:before {
+  content: "\f07a";
+}
+.icon-folder-close:before {
+  content: "\f07b";
+}
+.icon-folder-open:before {
+  content: "\f07c";
+}
+.icon-resize-vertical:before {
+  content: "\f07d";
+}
+.icon-resize-horizontal:before {
+  content: "\f07e";
+}
+.icon-bar-chart:before {
+  content: "\f080";
+}
+.icon-twitter-sign:before {
+  content: "\f081";
+}
+.icon-facebook-sign:before {
+  content: "\f082";
+}
+.icon-camera-retro:before {
+  content: "\f083";
+}
+.icon-key:before {
+  content: "\f084";
+}
+.icon-cogs:before {
+  content: "\f085";
+}
+.icon-comments:before {
+  content: "\f086";
+}
+.icon-thumbs-up:before {
+  content: "\f087";
+}
+.icon-thumbs-down:before {
+  content: "\f088";
+}
+.icon-star-half:before {
+  content: "\f089";
+}
+.icon-heart-empty:before {
+  content: "\f08a";
+}
+.icon-signout:before {
+  content: "\f08b";
+}
+.icon-linkedin-sign:before {
+  content: "\f08c";
+}
+.icon-pushpin:before {
+  content: "\f08d";
+}
+.icon-external-link:before {
+  content: "\f08e";
+}
+.icon-signin:before {
+  content: "\f090";
+}
+.icon-trophy:before {
+  content: "\f091";
+}
+.icon-github-sign:before {
+  content: "\f092";
+}
+.icon-upload-alt:before {
+  content: "\f093";
+}
+.icon-lemon:before {
+  content: "\f094";
+}
+/* Elements =================================================== */
+hr {
+  display: block;
+  margin: 1em 0;
+  padding: 0;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #c7ced6;
+  border-bottom: 1px solid #ffffff;
+}
+img {
+	max-width: 100%;
+	border-width: 0;
+	vertical-align: middle;
+	-ms-interpolation-mode: bicubic;
+}
+svg:not(:root) {
+  overflow: hidden;
+}
+figure {
+  margin-bottom: 1.5em;
+}
+figure img {
+  margin-bottom: 0.375em;
+}
+figure figcaption {
+  display: block;
+  font-weight: normal;
+  font-size: 14px;
+  font-size: 1.4rem;
+  color: #808080;
+}
+/* 320 and Up */
+/* Modules upstart */
+/* Version: 1.0 */
+/* Author: Andy Clarke */
+/* URL: http://stuffandnonsense.co.uk/projects/320andup */
+.grid {
+	margin-bottom: 1.5em;
+}
+.grid-a { 
+	width: 100%;
+}
+.grid:last-child {
+	margin-bottom: 0;
+	border-bottom-width: 0;
+}
+@media only screen and (min-width: 480px) {
+  /* Styles */
+}
+@media only screen and (min-width: 600px) {
+	.grids-three .grid-a {
+		float: left;
+		width: 31.64%;
+		margin-right: 2.53%;
+	}
+	.grids-four .grid-a {
+		float: left;
+		width: 31.64%;
+		margin-right: 2.53%;
+	}
+}
+@media only screen and (min-width: 768px) {
+}
+@media only screen and (min-width: 992px) {
+	.grids-two .grid {
+		width: 49%;
+	}
+	.grids-two .grid-1 {
+		float: left;
+	}
+	.grids-two .grid-2 {
+		float: right;
+	}
+	.grids-three .grid {
+		float: left;
+		width: 31.64%;
+		margin: 0 2.53% 0 0;
+		border-bottom-width: 0;
+	}
+	.grids-three .grid-3 {
+		float: right;
+		margin-right: 0;
+	}
+	.grids-three .grid .grid-a {
+		float: none;
+		width: 100%;
+		margin-right: 0;
+		margin-bottom: 0.75em;
+	}
+	.grids-four .grid {
+		float: left;
+		width: 20.25%;
+		margin: 0 6.32% 0 0;
+		border-bottom-width: 0;
+	}
+	.grids-four .grid-4 {
+		float: right;
+		margin-right: 0;
+	}
+  .grids-four .grid .grid-a {
+		float: none;
+		width: 100%;
+		margin-right: 0;
+  }
+}
+@media only screen and (min-width: 1382px) {
+  /* Styles */
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min--moz-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5) {
+  /* Styles */
+}
+/* 320 and Up */
+/* Panels Upstart */
+/* Version: 1.0 */
+/* Author: Andy Clarke */
+/* URL: http://stuffandnonsense.co.uk/projects/320andup */
+.full {
+  margin-bottom: 1.5em;
+  padding: 1.5em;
+  background-color: #f3f5f6;
+  border-top: 2px solid #c7ced6;
+  border-bottom: 2px solid #c7ced6;
+}
+.full .grids {
+  width: 90%;
+  margin: 0 auto;
+  padding: 1.5em 0;
+}
+

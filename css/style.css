@@ -1,0 +1,100 @@
+
+html { background: url('../img/bg/paper.png'); }
+
+/**** BANNER ****************************************************/
+#banner { width:100%; height: 128px; margin-bottom: 30px; background: url('../img/banner/back.png'); background-size: auto 100%; }
+#banner-fixed {  width:100%; height: 128px; margin:auto; }
+#banner-image { display:none; float:left; height: 110px; }
+#banner-tyre { float:right; height: 100%; }
+#banner-nav { float:center; width:75%; min-width:240px; max-width: 320px; margin: auto; }
+#banner-title { min-width:240px; }
+#banner-break { display:none; height: 128px; margin-bottom: 30px; }
+#tabs { margin:0; padding:0; float:left; width:100%; min-width:240px;  height: 80px; }
+
+.tab { float:left; display:block; width:33.3333%; height:100%; }
+.tab-img-wrapper { width:80px; height: 62px; -moz-background-size:100% auto; background-size:100% auto; background-repeat: no-repeat; background-position: top;}
+.selected .tab-img-wrapper { background-position: center; }
+.tab a:hover .tab-img-wrapper { background-position: bottom; }
+
+#info-content { float:right; }
+
+#gallery .grid { margin-bottom: 0; }
+#gallery p { background: url('../img/bg/paper.png'); margin:0.7em; padding:0.3em; -moz-box-shadow: 3px 3px 3px rgba(0,0,0,0.25); -webkit-box-shadow: 3px 3px 3px rgba(0,0,0,0.25); box-shadow: 3px 3px 3px rgba(0,0,0,0.25);}
+
+/**** MAIN WRAPPER **********************************************/
+
+.gap-small { padding: 0.1em; }
+.gap-med { padding: 0.5em; }
+.gap-large { padding: 1em; }
+.gap-below { padding-bottom: 1em; }
+
+/**** SLIDER ****************************************************/
+
+.slider { width:100%; height:360px; margin-bottom:2em; background: url('../img/features/back.png'); background-repeat:no-repeat; background-position: center; }
+.slide { width:100%; height:100%; }
+.slide p { background: url('../img/bg/paper.png'); padding:0.3em; -moz-box-shadow: 3px 3px 3px rgba(0,0,0,0.25); -webkit-box-shadow: 3px 3px 3px rgba(0,0,0,0.25); box-shadow: 3px 3px 3px rgba(0,0,0,0.25);}
+#slide-intro { background: url('../img/features/slideIntro.png'); background-repeat:no-repeat; background-position: 80% center;}
+#slide-intro p { vertical-align:center; margin-left: 7%; max-width:320px; }
+#slide-intro p:first-child { margin-top:10%; }
+
+@media only screen and (min-width: 480px) {
+	/* 480 =================================================== */
+	#banner-image { display: block; }
+	#banner-nav { float:left; }
+}
+@media only screen and (min-width: 600px) {
+	/* 600 =================================================== */
+}
+@media only screen and (min-width: 768px) {
+	/* 768 =================================================== */
+        #banner { position: fixed; }
+        #banner-fixed { background: url('../img/banner/rubbish.png'); background-repeat: no-repeat; background-position: 0px 16px; }
+	#banner-nav { max-width:none; margin-top: 30px; }
+	#banner-title { max-width: 49%; height:61px;}
+        #banner-break { display:block; }
+	#tabs { float:right; width: 49%; }
+	.gallery-three .grid {
+		width: 47%;
+		margin-bottom: 0;
+		border-bottom-width: 0;
+	}
+	.gallery-three .grid-1 { float: left; }
+	.gallery-three .grid-2 { display: none; }
+	.gallery-three .grid-3 { float: right; }
+}
+@media only screen and (min-width: 992px) {
+	/* 992 =================================================== */
+	.gallery-three .grid {
+		float: left;
+		width: 31.64%;
+		margin: 0 2.53% 0 0;
+		border-bottom-width: 0;
+	}
+	.gallery-three .grid-2  { display: block; }
+	.gallery-three .grid-3 {
+		float: right;
+		margin-right: 0;
+	}
+}
+@media only screen and (min-width: 1140px) {
+	#banner { position: absolute;  }
+	#banner-image { width:25%; }
+	#banner-title { margin-left: 20px; }
+	
+	.slider { background-size: 100%; }
+	#slide-intro { background-size: 70%; }
+	
+	#all-content { margin: auto; }
+	#main-content { float: right; width: 73.5%; }
+	#gallery-content { float: right; width: 73.5%; }
+	#linked-content { float: left; width: 23.5%; }
+	#info-content { width: 73.5%; }
+}
+@media only screen and (min-width: 1382px) {
+	/* 1382 =================================================== */
+	#banner-fixed { max-width: 1382px; }
+	#all-content { max-width: 1382px; }
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min--moz-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5) {
+	/* 2x =================================================== */
+}
