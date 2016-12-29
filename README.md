@@ -2,8 +2,6 @@
 
 The first website I ever built, a responsive site about earth-ships, built as part of a class MDDN-352 at [Victoria University](http://www.victoria.ac.nz/design). Currently hosted at [ryanloader.me/earthships](http://ryanloader.me/earthships/).
 
-I host the site on [Amazon Web Services](https://aws.amazon.com/) for about ~55c a month. I make use of the [S3](https://aws.amazon.com/s3/) service for content storage and distribution as described in [this article](http://docs.aws.amazon.com/AmazonS3/latest/dev/WebsiteHosting.html) and [Route 53](https://aws.amazon.com/route53/) for DNS.
-
 ### Features ###
 
 * *Responsive layout that's optimised for iPhone, iPad and desktop viewing*
